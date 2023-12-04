@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eu
+
+find obj-*/meson-logs -name testlog*.txt -exec head -n-0 -v '{}' ';'
+
+case "$DEB_HOST_ARCH" in
+	(amd64 | arm64 | armhf | i386 | mips64el | mipsel | ppc64el | s390x | riscv64)
+		exit 1
+		;;
+
+	(*)
+		echo "Assuming tests are failing due to gjs being disabled"
+		echo "See https://gitlab.gnome.org/GNOME/glade/-/issues/495"
+		exit 0
+		;;
+esac

@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eux
 
+export NO_AT_BRIDGE=1
+
 dbus-run-session -- xvfb-run -a python3 <<EOF
 import gi
 gi.require_version("Gladeui", "2.0")

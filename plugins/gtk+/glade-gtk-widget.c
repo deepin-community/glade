@@ -20,6 +20,7 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
+
 #include <config.h>
 #include <glib/gi18n-lib.h>
 #include <gladeui/glade.h>
@@ -704,7 +705,18 @@ widget_parent_changed (GtkWidget          *widget,
   parent = glade_widget_get_parent (gwidget);
 
   if (parent && !glade_widget_get_internal (parent))
-    glade_widget_set_action_sensitive (gwidget, "remove_parent", TRUE);
+    {
+      GladeWidget *grand_parent;
+      gboolean can_add = TRUE;
+
+      /* We can not use glade_widget_adaptor_add_verify() here because it takes into account placeholders spaces */
+      if ((grand_parent = glade_widget_get_parent (parent)) &&
+          GTK_IS_SCROLLED_WINDOW (glade_widget_get_object (grand_parent)) &&
+          !GTK_IS_SCROLLABLE (widget))
+        can_add = FALSE;
+
+      glade_widget_set_action_sensitive (gwidget, "remove_parent", can_add);
+    }
   else
     glade_widget_set_action_sensitive (gwidget, "remove_parent", FALSE);
 }
@@ -932,13 +944,16 @@ glade_gtk_widget_action_activate (GladeWidgetAdaptor *adaptor,
           if ((gnew_parent =
                glade_command_create (adaptor, gparent, NULL, project)) != NULL)
             {
+              GladeWidget *real_parent = NULL;
+
               /* We might need to add a viewport */
               if (new_type == GTK_TYPE_SCROLLED_WINDOW &&
                   !GTK_IS_SCROLLABLE (object))
                 {
                   GladeWidgetAdaptor *viewport =
                     glade_widget_adaptor_get_by_type (GTK_TYPE_VIEWPORT);
-                  gnew_parent = glade_command_create (viewport,
+
+                  real_parent = glade_command_create (viewport,
                                                       gnew_parent,
                                                       NULL,
                                                       project);
@@ -971,7 +986,11 @@ glade_gtk_widget_action_activate (GladeWidgetAdaptor *adaptor,
                   (glade_widget_get_project (gparent), prop_cmds);
 
               /* Add "this" widget to the new parent */
-              glade_command_add (&this_widget, gnew_parent, NULL, project, FALSE);
+              glade_command_add (&this_widget,
+                                 real_parent ? real_parent : gnew_parent,
+                                 NULL,
+                                 project,
+                                 FALSE);
 
               glade_command_pop_group ();
             }

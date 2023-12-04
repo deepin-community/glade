@@ -13,10 +13,10 @@ ifneq ($(filter libgladeui-doc,$(binaries)),)
 	ENABLE_DOCS = -Dgtk_doc=true
 endif
 endif
-ifneq (,$(filter $(DEB_HOST_ARCH), ia64 kfreebsd-amd64 kfreebsd-i386 sh4))
+ifneq (,$(filter $(DEB_HOST_ARCH), ia64 kfreebsd-amd64 kfreebsd-i386))
 	ENABLE_WEBKIT = -Dwebkit2gtk=disabled
 endif
-ifeq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64))
+ifeq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf i386 mips64el mipsel ppc64el s390x riscv64))
 	ENABLE_GJS = -Dgjs=disabled
 endif
 
@@ -26,28 +26,13 @@ endif
 override_dh_auto_configure:
 	dh_auto_configure -- -Dauto_features=enabled $(ENABLE_DOCS) $(ENABLE_WEBKIT) $(ENABLE_GJS)
 
-execute_before_dh_makeshlibs:
-ifneq (,$(filter $(DEB_HOST_ARCH), ia64 kfreebsd-amd64 kfreebsd-i386 sh4))
-	grep -E -v 'webkit|gjs' debian/libgladeui-2-13.symbols > debian/libgladeui-2-13.symbols.$(DEB_HOST_ARCH)
-else ifeq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64))
-	grep -E -v 'gjs' debian/libgladeui-2-13.symbols > debian/libgladeui-2-13.symbols.$(DEB_HOST_ARCH)
-endif
-
-TEST_COMMAND = dh_auto_test -- --wrap="dbus-run-session -- xvfb-run -a" \
+TEST_COMMAND = NO_AT_BRIDGE=1 dh_auto_test -- --wrap="dbus-run-session -- xvfb-run -a" \
 	--timeout-multiplier 5
 
 override_dh_auto_test:
-# Tests are failing without gjs support, see https://gitlab.gnome.org/GNOME/glade/-/issues/495
-ifeq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x powerpc ppc64 riscv64))
-	$(TEST_COMMAND) || true
-else
-	$(TEST_COMMAND)
-endif
+	$(TEST_COMMAND) || DEB_HOST_ARCH=$(DEB_HOST_ARCH) debian/debug-test-failure
 
 # There's unclear precedent in the Debian archive for which package
 # should install the ITS files. These files probably aren't needed yet anyway.
 override_dh_missing:
 	dh_missing -X/usr/share/gettext/
-
-execute_before_dh_clean:
-	rm -f debian/libgladeui-2-13.symbols.$(DEB_HOST_ARCH)

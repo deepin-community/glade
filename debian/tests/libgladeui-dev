@@ -39,5 +39,5 @@ EOF
 "${CROSS_COMPILE}gcc" -o glade glade.c $("${CROSS_COMPILE}pkg-config" --cflags --libs gladeui-2.0)
 echo "build: OK"
 [ -x ./glade ]
-dbus-run-session -- xvfb-run -a ./glade
+NO_AT_BRIDGE=1 dbus-run-session -- xvfb-run -a ./glade
 echo "run: OK"

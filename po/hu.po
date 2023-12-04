@@ -10,18 +10,18 @@ msgstr ""
 "Project-Id-Version: glade master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/glade/issues\n"
 "POT-Creation-Date: 2020-09-19 10:55+0000\n"
-"PO-Revision-Date: 2020-09-19 18:01+0200\n"
-"Last-Translator: Meskó Balázs <mesko.balazs@fsf.hu>\n"
+"PO-Revision-Date: 2020-09-23 17:47+0200\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/org.gnome.Glade.desktop.in.in:3 data/org.gnome.Glade.appdata.xml.in:6
-#: src/main.c:43 src/glade.glade:261
+#: src/main.c:44 src/glade.glade:261
 msgid "Glade"
 msgstr "Glade"
 
@@ -70,115 +70,115 @@ msgstr ""
 "A GtkBuilder használatával a Glade XML fájlok számos programozási nyelvben "
 "használhatók, mint a C, C++, C#, Vala, Java, Perl, Python és mások."
 
-#: src/glade-window.c:50
+#: src/glade-window.c:51
 msgid "[Read Only]"
 msgstr "[Csak olvasható]"
 
-#: src/glade-window.c:181
+#: src/glade-window.c:182
 msgid "User Interface Designer"
 msgstr "Felhasználóifelület-tervező"
 
-#: src/glade-window.c:428 src/glade-window.c:435
+#: src/glade-window.c:429 src/glade-window.c:436
 msgid "the last action"
 msgstr "az utolsó művelet"
 
-#: src/glade-window.c:429
+#: src/glade-window.c:430
 #, c-format
 msgid "Undo: %s"
 msgstr "Visszavonás: %s"
 
-#: src/glade-window.c:436
+#: src/glade-window.c:437
 #, c-format
 msgid "Redo: %s"
 msgstr "Mégis: %s"
 
-#: src/glade-window.c:461
+#: src/glade-window.c:462
 #, c-format
 msgid "Autosaving '%s'"
 msgstr "„%s” automatikus mentése"
 
-#: src/glade-window.c:466
+#: src/glade-window.c:467
 #, c-format
 msgid "Error autosaving '%s'"
 msgstr "Hiba a(z) „%s” automatikus mentésekor"
 
-#: src/glade-window.c:688
+#: src/glade-window.c:689
 msgid "Open…"
 msgstr "Megnyitás…"
 
-#: src/glade-window.c:722
+#: src/glade-window.c:723
 #, c-format
 msgid "Project %s is still loading."
 msgstr "A(z) „%s” projekt betöltése még folyamatban."
 
-#: src/glade-window.c:741
+#: src/glade-window.c:742
 msgid "Failed to backup existing file, continue saving?"
 msgstr "A meglévő fájl mentése sikertelen, folytatja a mentést?"
 
-#: src/glade-window.c:756
+#: src/glade-window.c:757
 #, c-format
 msgid "Failed to save %s: %s"
 msgstr "%s mentése meghiúsult: %s"
 
-#: src/glade-window.c:795
+#: src/glade-window.c:796
 #, c-format
 msgid "The file %s has been modified since reading it"
 msgstr "A(z) %s fájl módosult a beolvasása óta"
 
-#: src/glade-window.c:799
+#: src/glade-window.c:800
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Ha most elmenti, minden külső módosítás elveszhet. Mindenképp menti?"
 
-#: src/glade-window.c:804
+#: src/glade-window.c:805
 msgid "_Save Anyway"
 msgstr "_Mentés mindenképp"
 
-#: src/glade-window.c:812
+#: src/glade-window.c:813
 msgid "_Don't Save"
 msgstr "_Ne legyen mentve"
 
-#: src/glade-window.c:845
+#: src/glade-window.c:846
 #, c-format
 msgid "Project '%s' saved"
 msgstr "A(z) „%s” projekt elmentve"
 
-#: src/glade-window.c:876
+#: src/glade-window.c:877
 msgid "Save As…"
 msgstr "Mentés másként…"
 
-#: src/glade-window.c:940
+#: src/glade-window.c:941
 #, c-format
 msgid "Could not save the file %s"
 msgstr "Nem menthető a(z) %s fájl"
 
-#: src/glade-window.c:944
+#: src/glade-window.c:945
 msgid "You do not have the permissions necessary to save the file."
 msgstr "Nem rendelkezik a fájl mentéséhez szükséges jogosultságokkal."
 
-#: src/glade-window.c:966
+#: src/glade-window.c:967
 #, c-format
 msgid "Could not save file %s. Another project with that path is open."
 msgstr ""
 "A(z) %s fájl nem menthető. Meg van nyitva egy projekt ezzel az elérési úttal."
 
-#: src/glade-window.c:994
+#: src/glade-window.c:995
 msgid "No open projects to save"
 msgstr "Nincsenek megnyitva menthető projektek"
 
-#: src/glade-window.c:1027
+#: src/glade-window.c:1028
 #, c-format
 msgid "Save changes to project \"%s\" before closing?"
 msgstr "Menti „%s” projekt módosításait bezárás előtt?"
 
-#: src/glade-window.c:1035
+#: src/glade-window.c:1036
 msgid "Your changes will be lost if you don't save them."
 msgstr "A módosításai elvesznek, ha nem menti azokat."
 
-#: src/glade-window.c:1039
+#: src/glade-window.c:1040
 msgid "Close _without Saving"
 msgstr "Bezárás mentés _nélkül"
 
-#: src/glade-window.c:1040 src/glade-window.c:1725 src/glade-preferences.c:237
+#: src/glade-window.c:1041 src/glade-window.c:1724 src/glade-preferences.c:237
 #: gladeui/glade-editor.c:794 gladeui/glade-editor.c:1153
 #: gladeui/glade-editor-property.c:1776 gladeui/glade-editor-property.c:2084
 #: gladeui/glade-editor-property.c:2281 gladeui/glade-editor-property.c:3217
@@ -188,126 +188,126 @@ msgstr "Bezárás mentés _nélkül"
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: src/glade-window.c:1041 src/glade.glade:685 gladeui/glade-utils.c:486
+#: src/glade-window.c:1042 src/glade.glade:685 gladeui/glade-utils.c:486
 msgid "_Save"
 msgstr "M_entés"
 
-#: src/glade-window.c:1072
+#: src/glade-window.c:1073
 msgid "Save…"
 msgstr "Mentés…"
 
-#: src/glade-window.c:1632
+#: src/glade-window.c:1631
 msgid "Could not create a new project."
 msgstr "Nem hozható létre új projekt."
 
-#: src/glade-window.c:1693
+#: src/glade-window.c:1692
 #, c-format
 msgid "The project %s has unsaved changes"
 msgstr "A(z) %s projektben mentetlen módosítások vannak"
 
-#: src/glade-window.c:1698
+#: src/glade-window.c:1697
 msgid "If you reload it, all unsaved changes could be lost. Reload it anyway?"
 msgstr ""
 "Ha most újratölti, minden mentetlen módosítás elveszhet. Mindenképp menti?"
 
-#: src/glade-window.c:1708
+#: src/glade-window.c:1707
 #, c-format
 msgid "The project file %s has been externally modified"
 msgstr "A(z) %s projektfájlt egy külső program módosította"
 
-#: src/glade-window.c:1713
+#: src/glade-window.c:1712
 msgid "Do you want to reload the project?"
 msgstr "Újra kívánja tölteni a projektet?"
 
-#: src/glade-window.c:1719
+#: src/glade-window.c:1718
 msgid "_Reload"
 msgstr "Új_ratöltés"
 
-#: src/glade-window.c:2265
+#: src/glade-window.c:2269
 msgid "Hello, I will show you what's new in Glade"
 msgstr "Üdvözlet, körbevezetjük a Glade újdonságain"
 
-#: src/glade-window.c:2266
+#: src/glade-window.c:2270
 msgid "The menubar and toolbar were merged in the headerbar"
 msgstr "A menüsáv és az eszköztár egyesítve lett a címsávban"
 
-#: src/glade-window.c:2268
+#: src/glade-window.c:2272
 msgid "You can open a project"
 msgstr "Megnyithat projekteket"
 
-#: src/glade-window.c:2269
+#: src/glade-window.c:2273
 msgid "find recently used"
 msgstr "megkeresheti a nemrég használtat"
 
-#: src/glade-window.c:2270
+#: src/glade-window.c:2274
 msgid "or create a new one"
 msgstr "vagy újat hozhat létre"
 
-#: src/glade-window.c:2274
+#: src/glade-window.c:2278
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: src/glade-window.c:2275
+#: src/glade-window.c:2279
 msgid "Redo"
 msgstr "Mégis"
 
-#: src/glade-window.c:2276
+#: src/glade-window.c:2280
 msgid "Project switcher"
 msgstr "A Projektváltó"
 
-#: src/glade-window.c:2278
+#: src/glade-window.c:2282
 msgid "and Save button are directly accessible in the headerbar"
 msgstr "és a Mentés gombok közvetlenül a címsávból érhetőek el"
 
-#: src/glade-window.c:2279
+#: src/glade-window.c:2283
 msgid "just like Save As"
 msgstr "csakúgy, mint a Mentés másként"
 
-#: src/glade-window.c:2280
+#: src/glade-window.c:2284
 msgid "project properties"
 msgstr "projekt tulajdonságok"
 
-#: src/glade-window.c:2281
+#: src/glade-window.c:2285
 msgid "and less commonly used actions"
 msgstr "és kevésbé gyakran használt műveletek"
 
-#: src/glade-window.c:2283
+#: src/glade-window.c:2287
 msgid "The object inspector took the palette's place"
 msgstr "Az objektumvizsgáló átvette a paletta helyét"
 
-#: src/glade-window.c:2284
+#: src/glade-window.c:2288
 msgid "To free up space for the property editor"
 msgstr "Hogy helyet szabadítson fel a tulajdonságszerkesztőnek"
 
-#: src/glade-window.c:2286
+#: src/glade-window.c:2290
 msgid "The palette was replaced with a new object chooser"
 msgstr "A palettát leváltotta az új objektumválasztó"
 
-#: src/glade-window.c:2287
+#: src/glade-window.c:2291
 msgid "Where you can search all supported classes"
 msgstr "Ahol az összes támogatott osztályra kereshet"
 
-#: src/glade-window.c:2288
+#: src/glade-window.c:2292
 msgid "investigate GTK+ object groups"
 msgstr "GTK+ objektumcsoportokat vizsgálhat"
 
-#: src/glade-window.c:2289
+#: src/glade-window.c:2293
 msgid "and find classes introduced by other libraries"
 msgstr ""
 "és megtalálhatja az egyéb programkönyvtárak által bevezetett osztályokat"
 
-#: src/glade-window.c:2291
+#: src/glade-window.c:2295
 msgid ""
 "OK, now that we are done with the overview, let's start with the new workflow"
 msgstr ""
 "Rendben, most már végzett az áttekintéssel, kezdjen neki az új "
 "munkafolyamatnak"
 
-#: src/glade-window.c:2293
+#: src/glade-window.c:2297
 msgid "First of all, create a new project"
 msgstr "Először is, hozzon létre egy új projektet"
 
-#: src/glade-window.c:2294
+#: src/glade-window.c:2298
 msgid ""
 "OK, now add a GtkWindow using the new widget chooser or by double clicking "
 "on the workspace"
@@ -315,35 +315,35 @@ msgstr ""
 "Rendben, most adjon hozzá egy GtkWindow objektumot az új felületi elem "
 "választóval, vagy kattintson kétszer a munkaterületre"
 
-#: src/glade-window.c:2295
+#: src/glade-window.c:2299
 msgid "Excellent!"
 msgstr "Kitűnő!"
 
-#: src/glade-window.c:2296
+#: src/glade-window.c:2300
 msgid ""
 "BTW, did you know you can double click on any placeholder to create widgets?"
 msgstr ""
 "Egyébként tudta, hogy bármely helykitöltőn kettőt kattintva létre tud hozni "
 "felületi elemeket?"
 
-#: src/glade-window.c:2297
+#: src/glade-window.c:2301
 msgid "Try adding a grid"
 msgstr "Próbáljon hozzáadni egy rácsot"
 
-#: src/glade-window.c:2298
+#: src/glade-window.c:2302
 msgid "and a button"
 msgstr "és egy gombot"
 
-#: src/glade-window.c:2300
+#: src/glade-window.c:2304
 msgid "Quite easy! Isn't it?"
 msgstr "Egész könnyű! Nemde?"
 
-#: src/glade-window.c:2301
+#: src/glade-window.c:2305
 msgid "Enjoy!"
 msgstr "Élvezze!"
 
 #. translators: Primary message of a dialog used to notify the user about the survey
-#: src/glade-window.c:2515
+#: src/glade-window.c:2519
 msgid ""
 "We are conducting a user survey\n"
 " would you like to take it now?"
@@ -352,46 +352,46 @@ msgstr ""
 "szeretné most kitölteni?"
 
 #. translators: Secondary text of a dialog used to notify the user about the survey
-#: src/glade-window.c:2519
+#: src/glade-window.c:2523
 msgid "If not, you can always find it in the Help menu."
 msgstr "Ha nem, bármikor megtalálhatja a Súgó menüben."
 
-#: src/glade-window.c:2521
+#: src/glade-window.c:2525
 msgid "_Do not show this dialog again"
 msgstr "_Ez az ablak ne jelenjen meg többé"
 
 #. translators: Text to show in the statusbar if the user did not completed the survey and choose not to show the notification dialog again
-#: src/glade-window.c:2542
+#: src/glade-window.c:2546
 msgid "Go to Help -> Registration & User Survey and complete our survey!"
 msgstr ""
 "Válassza a Súgó -> Regisztráció és felhasználói felmérés menüpontot, és "
 "töltse ki a felmérésünket!"
 
-#: src/main.c:52
+#: src/main.c:53
 msgid "Output version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
-#: src/main.c:55
+#: src/main.c:56
 msgid "Disable Devhelp integration"
 msgstr "Devhelp-integráció letiltása"
 
-#: src/main.c:57
+#: src/main.c:58
 msgid "be verbose"
 msgstr "részletes mód"
 
-#: src/main.c:142
+#: src/main.c:147
 #, c-format
 msgid "Unable to open '%s', the file does not exist.\n"
 msgstr "Nem nyitható meg a(z) „%s”, a fájl nem létezik.\n"
 
-#: src/main.c:170
+#: src/main.c:175
 msgid ""
 "gmodule support not found. gmodule support is required for glade to work"
 msgstr ""
 "A gmodule támogatás nem található. A gmodule támogatás szükséges a Glade "
 "működéséhez."
 
-#: src/main.c:188
+#: src/main.c:193
 msgid "Create or edit user interface designs for GTK+ or GNOME applications."
 msgstr ""
 "GTK+ és GNOME alkalmazások felhasználóifelület-terveinek létrehozása vagy "
@@ -1563,9 +1563,9 @@ msgstr "%2$s %1$s tulajdonságának beállítása erre: %3$s"
 msgid "Renaming %s to %s"
 msgstr "%s átnevezése a következőre: %s"
 
-#: gladeui/glade-command.c:1226 gladeui/glade-command.c:1836
-#: gladeui/glade-command.c:1862 gladeui/glade-command.c:1965
-#: gladeui/glade-command.c:2007
+#: gladeui/glade-command.c:1226 gladeui/glade-command.c:1834
+#: gladeui/glade-command.c:1860 gladeui/glade-command.c:1963
+#: gladeui/glade-command.c:2005
 msgid "multiple"
 msgstr "több"
 
@@ -1587,96 +1587,96 @@ msgstr "%s eltávolítása"
 msgid "Remove multiple"
 msgstr "Több elem eltávolítása"
 
-#: gladeui/glade-command.c:1808
+#: gladeui/glade-command.c:1808 gladeui/glade-popup.c:74
 #, c-format
 msgid "Create %s"
 msgstr "%s létrehozása"
 
-#: gladeui/glade-command.c:1834
+#: gladeui/glade-command.c:1832
 #, c-format
 msgid "Delete %s"
 msgstr "%s törlése"
 
-#: gladeui/glade-command.c:1860
+#: gladeui/glade-command.c:1858
 #, c-format
 msgid "Cut %s"
 msgstr "%s kivágása"
 
-#: gladeui/glade-command.c:1963
+#: gladeui/glade-command.c:1961
 #, c-format
 msgid "Paste %s"
 msgstr "%s beszúrása"
 
-#: gladeui/glade-command.c:2005
+#: gladeui/glade-command.c:2003
 #, c-format
 msgid "Drag %s and Drop to %s"
 msgstr "%s megfogása és ejtése ide: %s"
 
-#: gladeui/glade-command.c:2008
+#: gladeui/glade-command.c:2006
 msgid "root"
 msgstr "gyökér"
 
-#: gladeui/glade-command.c:2126
+#: gladeui/glade-command.c:2124
 #, c-format
 msgid "Add signal handler %s"
 msgstr "%s szignálkezelő hozzáadása"
 
-#: gladeui/glade-command.c:2127
+#: gladeui/glade-command.c:2125
 #, c-format
 msgid "Remove signal handler %s"
 msgstr "%s szignálkezelő eltávolítása"
 
-#: gladeui/glade-command.c:2128
+#: gladeui/glade-command.c:2126
 #, c-format
 msgid "Change signal handler %s"
 msgstr "%s szignálkezelő módosítása"
 
-#: gladeui/glade-command.c:2343
+#: gladeui/glade-command.c:2341
 #, c-format
 msgid "Setting i18n metadata"
 msgstr "i18n metaadatok beállítása"
 
-#: gladeui/glade-command.c:2460
+#: gladeui/glade-command.c:2458
 #, c-format
 msgid "Locking %s by widget %s"
 msgstr "%s zárolása %s felületi elem által"
 
-#: gladeui/glade-command.c:2505
+#: gladeui/glade-command.c:2503
 #, c-format
 msgid "Unlocking %s"
 msgstr "%s feloldása"
 
-#: gladeui/glade-command.c:2627 gladeui/glade-command.c:2674
+#: gladeui/glade-command.c:2625 gladeui/glade-command.c:2672
 #, c-format
 msgid "Setting target version of '%s' to %d.%d"
 msgstr "„%s” cél verziójának beállítása erre: %d.%d"
 
-#: gladeui/glade-command.c:2830
+#: gladeui/glade-command.c:2828
 #, c-format
 msgid "Setting project's %s property"
 msgstr "Projekt %s tulajdonságának beállítása"
 
-#: gladeui/glade-command.c:2937
+#: gladeui/glade-command.c:2935
 #, c-format
 msgid "Setting resource path to '%s'"
 msgstr "Az erőforrás útvonalának beállítása erre: „%s”"
 
-#: gladeui/glade-command.c:2968
+#: gladeui/glade-command.c:2966
 #, c-format
 msgid "Setting translation domain to '%s'"
 msgstr "A fordítási tartomány beállítása erre: „%s”"
 
-#: gladeui/glade-command.c:3003
+#: gladeui/glade-command.c:3001
 #, c-format
 msgid "Unsetting widget '%s' as template"
 msgstr "„%s” felületi elem törlése mint sablon"
 
-#: gladeui/glade-command.c:3006
+#: gladeui/glade-command.c:3004
 #, c-format
 msgid "Setting widget '%s' as template"
 msgstr "„%s” felületi elem beállítása mint sablon"
 
-#: gladeui/glade-command.c:3009
+#: gladeui/glade-command.c:3007
 msgid "Unsetting template"
 msgstr "Sablon beállításának törlése"
 
@@ -2078,40 +2078,40 @@ msgstr "Összes törlése"
 msgid "Widget selector"
 msgstr "Felületielem-választó"
 
-#: gladeui/glade-popup.c:382
+#: gladeui/glade-popup.c:436
 msgid "_Add widget here"
 msgstr "F_elületi elem hozzáadása"
 
-#: gladeui/glade-popup.c:387 gladeui/glade-popup.c:546
+#: gladeui/glade-popup.c:441 gladeui/glade-popup.c:600
 msgid "Add widget as _toplevel"
 msgstr "Felületi elem h_ozzáadása felsőszintűként"
 
-#: gladeui/glade-popup.c:397
+#: gladeui/glade-popup.c:451
 msgid "_Select"
 msgstr "_Kijelölés"
 
-#: gladeui/glade-popup.c:399
+#: gladeui/glade-popup.c:453
 msgid "Cu_t"
 msgstr "_Kivágás"
 
-#: gladeui/glade-popup.c:401
+#: gladeui/glade-popup.c:455
 msgid "_Copy"
 msgstr "_Másolás"
 
-#: gladeui/glade-popup.c:408 gladeui/glade-popup.c:411
-#: gladeui/glade-popup.c:414
+#: gladeui/glade-popup.c:462 gladeui/glade-popup.c:465
+#: gladeui/glade-popup.c:468
 msgid "_Paste"
 msgstr "_Beillesztés"
 
-#: gladeui/glade-popup.c:418
+#: gladeui/glade-popup.c:472
 msgid "_Delete"
 msgstr "_Törlés"
 
-#: gladeui/glade-popup.c:550 gladeui/glade-popup.c:625
+#: gladeui/glade-popup.c:604 gladeui/glade-popup.c:679
 msgid "Read _documentation"
 msgstr "_Dokumentáció elolvasása"
 
-#: gladeui/glade-popup.c:618
+#: gladeui/glade-popup.c:672
 msgid "Set default value"
 msgstr "Alapértelmezett érték beállítása"
 
@@ -3577,7 +3577,7 @@ msgstr ""
 "%s másodlagos ikonjának beállítása, hogy ne használjon buboréksúgó-"
 "jelölőkódot"
 
-#: plugins/gtk+/glade-fixed.c:623 plugins/gtk+/glade-gtk-grid.c:1026
+#: plugins/gtk+/glade-fixed.c:623 plugins/gtk+/glade-gtk-grid.c:1050
 #, c-format
 msgid "Placing %s inside %s"
 msgstr "%s elhelyezése ezen belül: %s"
@@ -3752,26 +3752,31 @@ msgstr "Ez a legördülő lista nincs beállítva beviteli mező használatára"
 msgid "Tearoff menus are disabled"
 msgstr "A leválasztható menük le vannak tiltva"
 
-#: plugins/gtk+/glade-gtk-container.c:59
+#: plugins/gtk+/glade-gtk-container.c:60
 msgid "Cannot add a toplevel window to a container."
 msgstr "Nem adható felső szintű ablak tárolóhoz."
 
-#: plugins/gtk+/glade-gtk-container.c:68
+#: plugins/gtk+/glade-gtk-container.c:69
 msgid "Cannot add a popover to a container."
 msgstr "Nem adható felső szintű ablak tárolóhoz."
 
-#: plugins/gtk+/glade-gtk-container.c:79
+#: plugins/gtk+/glade-gtk-container.c:80
 #, c-format
 msgid "Widgets of type %s can only have widgets as children."
 msgstr ""
 "Egy %s típusú felületi elem csak gyermekként tartalmazhat felületi elemeket."
 
-#: plugins/gtk+/glade-gtk-container.c:90
+#: plugins/gtk+/glade-gtk-container.c:95
 #, c-format
-msgid "Widgets of type %s need placeholders to add children."
+#| msgid "Widgets of type %s need placeholders to add children."
+msgid ""
+"Widgets of type %s need placeholders to add children.\n"
+"Increase its size or add a container if it only supports one child."
 msgstr ""
-"A(z) %s típusú felületi elemeknek helykitöltőket kell tartalmazniuk "
-"gyermekek hozzáadásához."
+"A(z) %s típusú felületi elemeknek helykitöltőket kell tartalmazniuk gyermekek"
+" hozzáadásához.\n"
+"Növelje a méretét vagy adjon hozzá egy tárolót, ha csak egyetlen gyermeket"
+" támogat."
 
 #: plugins/gtk+/glade-gtk-entry.c:197
 msgid ""
@@ -3794,23 +3799,23 @@ msgstr ""
 msgid "Insert Child on %s"
 msgstr "Gyermek beszúrása a következőbe: %s"
 
-#: plugins/gtk+/glade-gtk-grid.c:516 plugins/gtk+/glade-gtk-list-box.c:333
+#: plugins/gtk+/glade-gtk-grid.c:540 plugins/gtk+/glade-gtk-list-box.c:333
 #: plugins/gtk+/glade-gtk-table.c:549
 #, c-format
 msgid "Insert Row on %s"
 msgstr "Sor beszúrása a következőbe: %s"
 
-#: plugins/gtk+/glade-gtk-grid.c:519 plugins/gtk+/glade-gtk-table.c:552
+#: plugins/gtk+/glade-gtk-grid.c:543 plugins/gtk+/glade-gtk-table.c:552
 #, c-format
 msgid "Insert Column on %s"
 msgstr "Oszlop beszúrása a következőbe: %s"
 
-#: plugins/gtk+/glade-gtk-grid.c:522 plugins/gtk+/glade-gtk-table.c:555
+#: plugins/gtk+/glade-gtk-grid.c:546 plugins/gtk+/glade-gtk-table.c:555
 #, c-format
 msgid "Remove Column on %s"
 msgstr "Oszlop eltávolítása a következőből: %s"
 
-#: plugins/gtk+/glade-gtk-grid.c:525 plugins/gtk+/glade-gtk-table.c:558
+#: plugins/gtk+/glade-gtk-grid.c:549 plugins/gtk+/glade-gtk-table.c:558
 #, c-format
 msgid "Remove Row on %s"
 msgstr "Sor eltávolítása a következőből: %s"
@@ -4128,22 +4133,22 @@ msgstr "%s szülőjének eltávolítása"
 msgid "Adding parent %s for %s"
 msgstr "%s szülő hozzáadása a következőhöz: %s"
 
-#: plugins/gtk+/glade-gtk-widget.c:1037 plugins/gtk+/glade-gtk-widget.c:1101
+#: plugins/gtk+/glade-gtk-widget.c:1056 plugins/gtk+/glade-gtk-widget.c:1120
 msgid "(unnamed)"
 msgstr "(névtelen)"
 
-#: plugins/gtk+/glade-gtk-widget.c:1049
+#: plugins/gtk+/glade-gtk-widget.c:1068
 #, c-format
 msgid "Adding %s to Size Group %s"
 msgstr "%s hozzáadása a méretcsoporthoz (%s)"
 
-#: plugins/gtk+/glade-gtk-widget.c:1053
+#: plugins/gtk+/glade-gtk-widget.c:1072
 #, c-format
 msgid "Adding %s to a new Size Group"
 msgstr "%s hozzáadása új méretcsoporthoz"
 
 #. Add trailing new... item
-#: plugins/gtk+/glade-gtk-widget.c:1121
+#: plugins/gtk+/glade-gtk-widget.c:1140
 msgid "New Size Group"
 msgstr "Új méretcsoport"
 

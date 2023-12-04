@@ -23,6 +23,7 @@
 
 #include <config.h>
 
+#include "version.h"
 #include "glade-window.h"
 #include "glade-resources.h"
 
@@ -67,7 +68,11 @@ handle_local_options (GApplication *application,
   if (version != FALSE)
     {
       /* Print version information and exit */
-      g_print ("%s\n", PACKAGE_STRING);
+      if (GLADE_MINOR_VERSION % 2)
+        g_print (PACKAGE_NAME" "VCS_VERSION"\n");
+      else
+        g_print (PACKAGE_STRING"\n");
+
       return 0;
     }
 
@@ -105,8 +110,6 @@ activate (GApplication *application)
     glade_window_check_devhelp (window);
 
   gtk_widget_show (GTK_WIDGET (window));
-
-  glade_window_registration_notify_user (window);
 }
 
 static void

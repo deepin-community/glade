@@ -1,8 +1,56 @@
-glade (3.38.2-5) UNRELEASED; urgency=medium
+glade (3.40.0-3) unstable; urgency=medium
 
-  * update
+  * Add patch to use webkitgtk 4.1 instead of 4.0
+  * debian/control.in: Update Build-Depends to match
 
- -- Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>  Tue, 05 Jul 2022 13:26:23 +0800
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 15 Sep 2022 08:11:43 -0400
+
+glade (3.40.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Disable gjs plugin on armel.
+    gjs itself is likely to be removed from armel in the near future
+    (see #1018076).
+  * Disable gjs plugin on big-endian powerpc/ppc64.
+    mozjs102 fails tests on these non-release architectures, so gjs will
+    soon stop being available there.
+  * d/rules, d/debug-test-failure: Show log on test failure.
+    Normally dh_auto_test would automatically show the log, but because
+    we're using a wrapper, the test does not have the expected filename.
+  * d/rules: Disable AT-SPI bridge during testing.
+    It seems that connecting to the accessibility bus frequently fails
+    during build-time testing, resulting in warnings that are sometimes
+    treated as fatal. This isn't core functionality for libglade, so
+    disable it.
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 31 Aug 2022 23:08:33 +0100
+
+glade (3.40.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - The Glade developers have announced that this is the final release
+      they intend to make
+  * Drop all patches; They have been incorporated upstream.
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Tue, 23 Aug 2022 11:48:15 -0300
+
+glade (3.38.2-7) unstable; urgency=medium
+
+  * Cherry-pick proposed patches to fix build with latest meson
+    (Closes: #1004337)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 25 Jan 2022 07:07:51 -0500
+
+glade (3.38.2-6) unstable; urgency=medium
+
+  * Renable webkit support on sh4 now that it builds fine
+  * debian/libgladeui-2-13.symbols: Remove symbols previously exported by the
+    plugins. Also symplify the debian/rules file.
+    Not too sure why they are not exported anymore though (Closes: #998592)
+  * debian/control.in: Bump Standards-Version to 4.6.0 (no further changes)
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 29 Nov 2021 09:57:11 +0100
 
 glade (3.38.2-5) unstable; urgency=medium
 

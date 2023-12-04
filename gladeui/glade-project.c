@@ -3661,10 +3661,12 @@ glade_project_get_widget_by_name (GladeProject *project, const gchar *name)
   for (list = project->priv->objects; list; list = list->next)
     {
       GladeWidget *widget;
+      gchar *widget_name;
 
       widget = glade_widget_get_from_gobject (list->data);
+      widget_name = glade_widget_get_name (widget);
 
-      if (strcmp (glade_widget_get_name (widget), name) == 0)
+      if (g_strcmp0 (widget_name, name) == 0)
         return widget;
     }
 
@@ -5318,8 +5320,7 @@ glade_project_command_paste (GladeProject     *project,
 {
   GladeClipboard *clipboard;
   GList *list;
-  GladeWidget *widget = NULL, *parent;
-  gint placeholder_relations = 0;
+  GladeWidget *widget = NULL, *parent = NULL;
 
   g_return_if_fail (GLADE_IS_PROJECT (project));
 
@@ -5339,8 +5340,10 @@ glade_project_command_paste (GladeProject     *project,
   /* If there is a selection, paste in to the selected widget, otherwise
    * paste into the placeholder's parent, or at the toplevel
    */
-  parent = list ? glade_widget_get_from_gobject (list->data) :
-      (placeholder) ? glade_placeholder_get_parent (placeholder) : NULL;
+  if (list)
+    parent = glade_widget_get_from_gobject (list->data);
+  else if (placeholder)
+    parent = glade_placeholder_get_parent (placeholder);
 
   widget = glade_clipboard_widgets (clipboard) ? glade_clipboard_widgets (clipboard)->data : NULL;
 
@@ -5391,51 +5394,6 @@ glade_project_command_paste (GladeProject     *project,
           if (!glade_widget_add_verify (parent, widget, TRUE))
             return;
         }
-    }
-
-
-  /* Check that we have compatible heirarchies */
-  for (list = glade_clipboard_widgets (clipboard); list && list->data; list = list->next)
-    {
-      widget = list->data;
-
-      if (!GLADE_WIDGET_ADAPTOR_IS_TOPLEVEL (glade_widget_get_adaptor (widget)) && parent)
-        {
-          /* Count placeholder relations
-           */
-          if (glade_widget_placeholder_relation (parent, widget))
-            placeholder_relations++;
-        }
-    }
-
-  g_assert (widget);
-
-  /* A GladeWidget that doesnt use placeholders can only paste one
-   * at a time
-   *
-   * XXX: Not sure if this has to be true.
-   */
-  if (GTK_IS_WIDGET (glade_widget_get_object (widget)) &&
-      parent && !GLADE_WIDGET_ADAPTOR_USE_PLACEHOLDERS (glade_widget_get_adaptor (parent)) &&
-      g_list_length (glade_clipboard_widgets (clipboard)) != 1)
-    {
-      glade_util_ui_message (glade_app_get_window (),
-                             GLADE_UI_INFO, NULL,
-                             _("Only one widget can be pasted at a "
-                               "time to this container"));
-      return;
-    }
-
-  /* Check that enough placeholders are available */
-  if (parent &&
-      GLADE_WIDGET_ADAPTOR_USE_PLACEHOLDERS (glade_widget_get_adaptor (parent)) &&
-      glade_util_count_placeholders (parent) < placeholder_relations)
-    {
-      glade_util_ui_message (glade_app_get_window (),
-                             GLADE_UI_INFO, NULL,
-                             _("Insufficient amount of placeholders in "
-                               "target container"));
-      return;
     }
 
   glade_command_paste (glade_clipboard_widgets (clipboard), parent, placeholder, project);
