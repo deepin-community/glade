@@ -1,8 +1,20 @@
+fs = import('fs')
+
+if fs.exists('../.git')
+  vcs_tag(input: 'version.h.in', output: 'version.h')
+else
+  config = configuration_data()
+  config.set ('VCS_TAG', glade_version)
+  configure_file(
+    input: 'version.h.in',
+    output: 'version.h',
+    configuration: config
+  )
+endif
+
 sources = files(
-  'glade-http.c',
   'glade-intro.c',
   'glade-preferences.c',
-  'glade-registration.c',
   'glade-settings.c',
   'glade-window.c',
   'main.c',
@@ -11,10 +23,7 @@ sources = files(
 resource_data = files(
   'glade.glade',
   'glade-preferences.glade',
-  'glade-registration.css',
-  'glade-registration.glade',
-  'glade-window.css',
-  'guido.png'
+  'glade-window.css'
 )
 
 resource = 'glade-resources'

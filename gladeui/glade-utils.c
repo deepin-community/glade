@@ -1280,6 +1280,8 @@ glade_util_get_file_mtime (const gchar *filename, GError **error)
   struct stat info;
   gint retval;
 
+  g_return_val_if_fail (filename, 0);
+
   retval = g_stat (filename, &info);
 
   if (retval != 0)
@@ -2181,7 +2183,7 @@ _glade_util_file_get_relative_path (GFile *target, GFile *source)
           relative_path = g_file_get_relative_path (target, source);
 
           g_string_append (relpath, "..");
-          g_string_append_c (relpath, G_DIR_SEPARATOR);
+          g_string_append_c (relpath, '/');
 
           g_object_unref (old_target);
         }
