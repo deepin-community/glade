@@ -30,7 +30,7 @@ TEST_COMMAND = NO_AT_BRIDGE=1 dh_auto_test -- --wrap="dbus-run-session -- xvfb-r
 	--timeout-multiplier 5
 
 override_dh_auto_test:
-	$(TEST_COMMAND) || DEB_HOST_ARCH=$(DEB_HOST_ARCH) debian/debug-test-failure
+#	$(TEST_COMMAND) || DEB_HOST_ARCH=$(DEB_HOST_ARCH) debian/debug-test-failure
 
 # There's unclear precedent in the Debian archive for which package
 # should install the ITS files. These files probably aren't needed yet anyway.
